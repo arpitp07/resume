@@ -1,32 +1,9 @@
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-%	The MIT License (MIT)
-%
-%	Copyright (c) 2021 Jitin Nair
-%
-%	Permission is hereby granted, free of charge, to any person obtaining a copy
-%	of this software and associated documentation files (the "Software"), to deal
-%	in the Software without restriction, including without limitation the rights
-%	to use, copy, modify, merge, publish, distribute, sublicense, and/or sell
-%	copies of the Software, and to permit persons to whom the Software is
-%	furnished to do so, subject to the following conditions:
-%	
-%	THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR
-%	IMPLIED, INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY,
-%	FITNESS FOR A PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE
-%	AUTHORS OR COPYRIGHT HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER
-%	LIABILITY, WHETHER IN AN ACTION OF CONTRACT, TORT OR OTHERWISE, ARISING FROM,
-%	OUT OF OR IN CONNECTION WITH THE SOFTWARE OR THE USE OR OTHER DEALINGS IN
-%	THE SOFTWARE.
-%	
-%
-%-----------------------------------------------------------------------------------------------------------------------------------------------%
-
 %----------------------------------------------------------------------------------------
 %	DOCUMENT DEFINITION
 %----------------------------------------------------------------------------------------
 
 % article class because we want to fully customize the page and not use a cv template
-\documentclass[a4paper,12pt]{article}
+\documentclass[a4paper,10pt]{article}
 
 %----------------------------------------------------------------------------------------
 %	FONT
@@ -54,7 +31,13 @@
 \RequirePackage{color}
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
-\usepackage[scale=0.9]{geometry}
+\usepackage[a4paper,
+            bindingoffset=0.2in,
+            left=.25in,
+            right=.25in,
+            top=.25in,
+            bottom=.25in,
+            footskip=.25in]{geometry}
 
 %tabularx environment
 \usepackage{tabularx}
@@ -81,15 +64,10 @@
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
 \titlespacing{\section}{0pt}{10pt}{10pt}
 
-%for publications
-\usepackage[style=authoryear,sorting=ynt, maxbibnames=2]{biblatex}
-
 %Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
 \definecolor{linkcolour}{rgb}{0,0.2,0.6}
 \hypersetup{colorlinks,breaklinks,urlcolor=linkcolour,linkcolor=linkcolour}
-\addbibresource{citations.bib}
-\setlength\bibitemsep{1em}
 
 %for social icons
 \usepackage{fontawesome5}
@@ -116,83 +94,144 @@
 % \end{tabularx}
 
 \begin{tabularx}{\linewidth}{@{} C @{}}
-\Huge{Your Name} \\[7.5pt]
-\href{https://github.com/username}{\raisebox{-0.05\height}\faGithub\ username} \ $|$ \ 
-\href{https://linkedin.com/in/username}{\raisebox{-0.05\height}\faLinkedin\ username} \ $|$ \ 
-\href{https://mysite.com}{\raisebox{-0.05\height}\faGlobe \ mysite.com} \ $|$ \ 
-\href{mailto:email@mysite.com}{\raisebox{-0.05\height}\faEnvelope \ email@mysite.com} \ $|$ \ 
-\href{tel:+000000000000}{\raisebox{-0.05\height}\faMobile \ +00.00.000.000} \\
+\Huge{Arpit Parihar} \\[5pt]
+\href{https://github.com/arpitp07}{\raisebox{-0.05\height}\faGithub\ Github} \ $|$ \ 
+\href{https://linkedin.com/in/asp07}{\raisebox{-0.05\height}\faLinkedin\ LinkedIn} \ $|$ \ 
+\href{mailto:arpitparihar07@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ arpitparihar07@gmail.com} \ $|$ \ 
+\href{https://www.google.com/maps/place/San+Mateo,+CA/}{\raisebox{-0.05\height}\faMapMarker\ San Mateo, CA} \ $|$ \ 
+\href{tel:+17738378826}{\raisebox{-0.05\height}\faMobile \ +1.773.837.8826} \\
 \end{tabularx}
 
 %----------------------------------------------------------------------------------------
 % EXPERIENCE SECTIONS
 %----------------------------------------------------------------------------------------
 
-%Interests/ Keywords/ Summary
-\section{Summary}
-This CV is automatically generated and deployed using the \href{https://github.com/jitinnair1/autoCV}{autoCV} template along with GitHub Actions such that a new version of the CV is compiled, published and ready for use when the cv.tex file is updated. For details, \href{https://github.com/jitinnair1/autoCV}{click here}.
-
 %Experience
 \section{Work Experience}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Designation} & \hfill Jan 2021 - present \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
-\end{tabularx}
-
-\begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Designation} & \hfill Mar 2019 - Jan 2021 \\[3.75pt]
+\textbf{Senior Data Scientist, Snowflake Inc.} & \hfill Feb 2022 - Present \\[3.75pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
     \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[--] long long line of blah blah that will wrap when the table fills the column width
-        \item[--] again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah. again, long long line of blah blah that will wrap when the table fills the column width but this time even more long long line of blah blah
+        \item[•] Worked closely with the corporate security team to identify and mitigate malicious domains generated by domain generating algorithms. Utilized advanced techniques such as Word2vec for IP to DNS path vectorization, cosine distance, and clustering to successfully identify anomalies and improve security measures.
+        \item[•] Led a team of three interns to create a robust data quality Python library with features like auto-EDA, data drift detection, and outlier detection using parametric and non-parametric tests such as ECOD, which is now utilized by all data science teams at Snowflake.
+        \item[•] Collaborated with the IT team to define and measure employee experience metrics in a data-driven manner using advanced techniques such as ordinal logistic regression and integer programming. These efforts were aimed at improving IT services and enhancing overall employee satisfaction.
+        \item[•] Led efforts to reduce SaaS subscription costs by employing machine learning techniques such as logistic regression and XGBoost to predict employee license usage. This saved \$5.5M in yearly costs for the company.
     \end{itemize}
     \end{minipage}
 }
 \end{tabularx}
 
-%Projects
-\section{Projects}
+\vspace{0pt}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
-\multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
+\textbf{Teaching Assistant, University of Chicago} & \hfill Mar 2021 - Present \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[•] Instructed large classes of up to 60 students in Machine Learning, Python for ML, Reinforcement Learning, Linear \& Non-Linear Models, and Machine Learning Operations. Conducted personalized sessions with students to provide individualized guidance and support, resulting in improved academic performance and overall learning outcomes.
+    \end{itemize}
+    \end{minipage}
+}
 \end{tabularx}
+
+\vspace{0pt}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Data Science Intern, McKinsey \& Company} & \hfill Jun 2021 - Sep 2021 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[•] Collaborated with data engineers and machine learning engineers to develop a comprehensive analytics platform for a prominent European agriculture company, serving seven different countries.
+        \item[•] Conducted experiments using MLFlow and Azure Databricks to build powerful ensemble models that predicted churn among farmers and distributors, achieving an accuracy rate of 68\%.
+        \item[•] Took ownership of code refactoring efforts, ensuring that all code was modularized, unit tested, formatted, and optimized for performance across a multi-region team spanning four different time zones.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\vspace{0pt}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Senior Data Scientist, Boston Consulting Group} & \hfill Apr 2018 - May 2019 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[•] Led the development of a deep learning model to detect breast cancer from mammograms, achieving an accuracy of 96\% using Keras and convolutional neural networks in a proof-of-concept project.
+        \item[•] Designed and implemented a Gradient Boosting model for a leading car seat manufacturer, which was used as an enterprise scale real-time predictive maintenance framework in Python and Azure. The model achieved an F1 score of 76\% and resulted in yearly savings of \$450k per plant.
+        \item[•] Developed a logistic regression model to predict the probability of infants' survival based on birth conditions for a state government. The model achieved an accuracy of 81\% and was used to inform statewide policy decisions.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\vspace{0pt}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Data Science Manager, Flipkart} & \hfill Sep 2017 - Mar 2018 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[•] Led a team in identifying the optimal delivery hub locations for a logistics company in the state of Karnataka using geocoding and hierarchical clustering. The project resulted in a 50-minute reduction in delivery times on average, significantly improving customer satisfaction and overall business efficiency.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+\vspace{0pt}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\textbf{Data Scientist, Mu Sigma} & \hfill Mar 2015 - Aug 2017 \\[3.75pt]
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+        \item[•] Developed customer churn models using logistic regression for a major insurance company, achieving a retention rate of 78\%. Involved clients in the analysis journey with infographics and presentations, helping them understand the findings and insights.
+        \item[•] Identified suspicious health insurance claims by formulating hypotheses and developing a rule-based fraud engine. Developed a random forest classifier to prioritize fraudulent claims, resulting in total savings of \$11M. The project significantly improved the efficiency of claims processing and saved the company valuable resources.
+    \end{itemize}
+    \end{minipage}
+}
+\end{tabularx}
+
+% %Projects
+% \section{Projects}
+
+% \begin{tabularx}{\linewidth}{ @{}l r@{} }
+% \textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
+% \multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
+% \end{tabularx}
 
 %----------------------------------------------------------------------------------------
 %	EDUCATION
 %----------------------------------------------------------------------------------------
 \section{Education}
 \begin{tabularx}{\linewidth}{@{}l X@{}}	
-2030 - present & PhD (Subject) at \textbf{University} \hfill \normalsize (GPA: 4.0/4.0) \\
+2020 - 2021 & Master's in Data Science at \textbf{University of Chicago} \hfill \normalsize (GPA: 4.0/4.0) \\
 
-2023 - 2027 & Bachelor's Degree at \textbf{College} \hfill (GPA: 4.0/4.0) \\ 
+2010 - 2014 & Bachelor's in Civil Engineering at \textbf{College of Engineering, Pune} \hfill (GPA: 7.5/10.0) \\ 
 
-2022 & Class 12th Some Board \hfill  (Grades) \\
-
-2021 & Class 10th Some Board \hfill  (Grades) \\
 \end{tabularx}
 
-%----------------------------------------------------------------------------------------
-%	PUBLICATIONS
-%----------------------------------------------------------------------------------------
-\section{Publications}
-\begin{refsection}[citations.bib]
-\nocite{*}
-\printbibliography[heading=none]
-\end{refsection}
 
 %----------------------------------------------------------------------------------------
 %	SKILLS
 %----------------------------------------------------------------------------------------
 \section{Skills}
-\begin{tabularx}{\linewidth}{@{}l X@{}}
-Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
-Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+% \begin{tabularx}{\linewidth}{@{}l X@{}}
+% Some Skills &  \normalsize{This, That, Some of this and that etc.}\\
+% Some More Skills  &  \normalsize{Also some more of this, Some more that, And some of this and that etc.}\\  
+% \end{tabularx}
+
+\begin{tabularx}{\linewidth}{ @{}l r@{} }
+\multicolumn{2}{@{}X@{}}{
+\begin{minipage}[t]{\linewidth}
+    \begin{itemize}[nosep,after=\strut, leftmargin=0em, itemsep=3pt]
+        \item[] Python, SQL, Snowflake, R, TensorFlow, AWS Sagemaker, Streamlit, Databricks, Git, Docker, MLFlow, Airflow, Spark
+    \end{itemize}
+    \end{minipage}
+}
 \end{tabularx}
 
 \vfill
-\center{\footnotesize Last updated: \today}
 
 \end{document}
