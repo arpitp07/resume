@@ -32,11 +32,11 @@
 \RequirePackage{graphicx}
 \usepackage[usenames,dvipsnames]{xcolor}
 \usepackage[a4paper,
-            bindingoffset=0.2in,
+            bindingoffset=0in,
             left=.25in,
             right=.25in,
-            top=.25in,
-            bottom=.25in,
+            top=.2in,
+            bottom=.2in,
             footskip=.25in]{geometry}
 
 %tabularx environment
@@ -62,7 +62,7 @@
 %CV Sections inspired by: 
 %http://stefano.italians.nl/archives/26
 \titleformat{\section}{\Large\scshape\raggedright}{}{0em}{}[\titlerule]
-\titlespacing{\section}{0pt}{10pt}{10pt}
+\titlespacing{\section}{0pt}{6pt}{6pt}
 
 %Setup hyperref package, and colours for links
 \usepackage[unicode, draft=false]{hyperref}
@@ -98,7 +98,7 @@
 \href{https://github.com/arpitp07}{\raisebox{-0.05\height}\faGithub\ Github} \ $|$ \ 
 \href{https://linkedin.com/in/asp07}{\raisebox{-0.05\height}\faLinkedin\ LinkedIn} \ $|$ \ 
 \href{mailto:arpitparihar07@gmail.com}{\raisebox{-0.05\height}\faEnvelope \ arpitparihar07@gmail.com} \ $|$ \ 
-\href{https://www.google.com/maps/place/Redwood+City,+CA/}{\raisebox{-0.05\height}\faMapMarker\ Redwood City, CA} \ $|$ \ 
+\href{https://www.google.com/maps/place/San+Jose,+CA/}{\raisebox{-0.05\height}\faMapMarker\ San Jose, CA} \ $|$ \ 
 \href{tel:+17738378826}{\raisebox{-0.05\height}\faMobile \ +1.773.837.8826} \\
 \end{tabularx}
 
@@ -110,21 +110,23 @@
 \section{Work Experience}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Staff AI Engineer, Snowflake Inc.} & \hfill Feb 2022 - Apr 2025, Nov 2025 - Present \\[3.75pt]
+\textbf{Staff AI Engineer, Snowflake Inc.} & \hfill Feb 2022 - Apr 2025, Nov 2025 - Present \\[2.5pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
+        \item[•] Extending Snowflake's AI usage agent solo from usage reporting into effectiveness measurement, piloting with $\sim$130 engineers: scores suggestion acceptance and PR throughput, mines telemetry for high-leverage usage patterns, and serves them as inline recommendations via a Cortex Code plugin
+        \item[•] Built and lead the evaluation harness for internal and Cortex AI agents, piloted on the Snowflake sales agent, the highest-usage agent at the company, and currently onboarding the remaining GTM agents:
+          \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
+            \item[-] Scored agent trajectories, tool calls, correctness of generated SQL, and response quality via golden datasets, LLM-as-judge, and human labels
+            \item[-] Added pulse-check evals against third-party MCP servers to catch upstream breakage before users did
+            \item[-] Gated releases with regression runs in CI, catching 18 tool outages and 53 stale eval cases in the first week
+            \item[-] Built the pilot solo, now leading a team of 2 extending coverage across agents
+          \end{itemize}
         \item[•] Developed an advanced AI-based employee assistant chatbot for internal Snowflake documentation and knowledge base articles, currently used by 9000 employees for day-to-day inquiries:
           \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
-            \item[-] Implemented ColBERT v2 retrieval system:
-              \begin{itemize}
-                \item[$\circ$] Developed late-interaction dense retrieval using contextualized embeddings, enabling more accurate and contextually-aware document matching
-                \item[$\circ$] Implemented MaxSim operator and efficient token-level interaction for granular relevance scoring
-                \item[$\circ$] Achieved 40\% improvement in retrieval accuracy compared to traditional approaches while maintaining sub-second query latency
-              \end{itemize}
-            \item[-] Utilized Claude 3.5 through Snowflake Cortex for response generation
-            \item[-] Developed agents to book optimal meeting rooms and to create IT tickets using a conversational interface
-            \item[-] Led development of a user-friendly frontend with citations, chat history, feedback, and custom bot creation
+            \item[-] Implemented a ColBERT v2 late-interaction retrieval system with contextualized embeddings and token-level MaxSim scoring, improving retrieval accuracy 40\% over traditional approaches at sub-second query latency
+            \item[-] Generated responses with Claude 3.5 through Snowflake Cortex, and built conversational agents that book meeting rooms and file IT tickets
+            \item[-] Led development of the frontend, with citations, chat history, feedback, and custom bot creation
           \end{itemize}
     \end{itemize}
     \end{minipage}
@@ -134,12 +136,20 @@
 \vspace{0pt}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-    \textbf{Applied Scientist, Delphina Inc.} & \hfill Apr 2025 - Nov 2025 \\[3.75pt]
+    \textbf{Applied Scientist, Delphina Inc.} & \hfill Apr 2025 - Nov 2025 \\[2.5pt]
     \multicolumn{2}{@{}X@{}}{
     \begin{minipage}[t]{\linewidth}
-        \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-            \item[•] Led evaluation and subagent architecture for Delphina analytics agent
-            \item[•] Responsible for adding and evaluating conventional ML algorithms to Delphina machine learning agent
+        \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
+            \item[•] Owned modeling capabilities for Delphina's machine learning agent (team of 8), driving toward a ``vibe ML'' workflow where the user states an objective in plain text and the agent runs the modeling loop:
+              \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
+                \item[-] Broadened regression coverage with Poisson and negative binomial link functions for count data, and extended the agent past classification and regression by adapting its tree-based ensembles to time-series forecasting via column offsetting, later adding FFT features
+                \item[-] Inserted an interpreter agent into the modeling loop to read each run's results and set the next run's hyperparameter space and tuning budget, alongside the existing learning-to-rank feature selection, reporting its reasoning per run
+              \end{itemize}
+            \item[•] After the company pivoted to an analytics agent, designed its fan-out subagent architecture for long-form recurring reporting (WBRs, QBRs) spanning many metrics:
+              \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
+                \item[-] Split the work across planning, metric deep-dive, synthesizer, and review subagents with strict contracts between them to limit information loss in LLM-to-LLM handoff
+                \item[-] Built correctness and style evals in Braintrust, reaching a 85\% pass rate across 5 design partners, one of which moved its WBR process onto Delphina entirely
+              \end{itemize}
         \end{itemize}
         \end{minipage}
     }
@@ -148,11 +158,11 @@
     \vspace{0pt}
     
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Teaching Assistant, University of Chicago} & \hfill Mar 2021 - Present \\[3.75pt]
+\textbf{Teaching Assistant, University of Chicago} & \hfill Mar 2021 - Oct 2024 \\[2.5pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[•] Instructed large classes of up to 60 students in Machine Learning, Python for ML, Reinforcement Learning, Linear \& Non-Linear Models, and Machine Learning Operations. Conducted personalized sessions with students to provide individualized guidance and support, resulting in improved academic performance and overall learning outcomes.
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
+        \item[•] Instructed classes of up to 60 students in Machine Learning, Python for ML, Reinforcement Learning, Linear \& Non-Linear Models, and MLOps, plus one-on-one sessions.
     \end{itemize}
     \end{minipage}
 }
@@ -161,12 +171,11 @@
 \vspace{0pt}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Data Science Intern, McKinsey \& Company} & \hfill Jun 2021 - Sep 2021 \\[3.75pt]
+\textbf{Data Science Intern, McKinsey \& Company} & \hfill Jun 2021 - Sep 2021 \\[2.5pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[•] Conducted experiments using MLFlow and Azure Databricks to build powerful ensemble models that predicted churn among farmers and distributors, achieving an accuracy rate of 68\%.
-        \item[•] Took ownership of code refactoring efforts, ensuring that all code was modularized, unit tested, formatted, and optimized for performance across a multi-region team spanning four different time zones.
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
+        \item[•] Built ensemble models predicting churn among farmers and distributors at 74\% accuracy, run as experiments in MLFlow and Azure Databricks.
     \end{itemize}
     \end{minipage}
 }
@@ -175,12 +184,12 @@
 \vspace{0pt}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Senior Data Scientist, Boston Consulting Group} & \hfill Apr 2018 - May 2019 \\[3.75pt]
+\textbf{Senior Data Scientist, Boston Consulting Group} & \hfill Apr 2018 - May 2019 \\[2.5pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[•] Led the development of a deep learning model to detect breast cancer from mammograms, achieving an accuracy of 96\% using Keras and convolutional neural networks in a proof-of-concept project.
-        \item[•] Designed and implemented a Gradient Boosting model for a leading car seat manufacturer, which was used as an enterprise scale real-time predictive maintenance framework in Python and Azure. The model achieved an F1 score of 76\% and resulted in yearly savings of \$450k per plant.
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
+        \item[•] Led the development of a deep learning model to detect breast cancer from mammograms, achieving an accuracy of 96\% using Keras and convolutional neural networks.
+        \item[•] Built a Gradient Boosting model for a leading car seat manufacturer, deployed as an enterprise-scale real-time predictive maintenance framework in Python and Azure, scoring an F1 of 76\% and saving \$450k per plant yearly.
     \end{itemize}
     \end{minipage}
 }
@@ -189,11 +198,11 @@
 \vspace{0pt}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Data Science Manager, Flipkart} & \hfill Sep 2017 - Mar 2018 \\[3.75pt]
+\textbf{Data Science Manager, Flipkart} & \hfill Sep 2017 - Mar 2018 \\[2.5pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[•] Led a team in identifying the optimal delivery hub locations for a logistics company in the state of Karnataka using geocoding and hierarchical clustering. The project resulted in a 50-minute reduction in delivery times on average, significantly improving customer satisfaction and overall business efficiency.
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
+        \item[•] Led a team siting optimal delivery hubs for a logistics company in Karnataka using geocoding and hierarchical clustering, cutting average delivery times by 50 minutes.
     \end{itemize}
     \end{minipage}
 }
@@ -202,12 +211,11 @@
 \vspace{0pt}
 
 \begin{tabularx}{\linewidth}{ @{}l r@{} }
-\textbf{Data Scientist, Mu Sigma} & \hfill Mar 2015 - Aug 2017 \\[3.75pt]
+\textbf{Data Scientist, Mu Sigma} & \hfill Mar 2015 - Aug 2017 \\[2.5pt]
 \multicolumn{2}{@{}X@{}}{
 \begin{minipage}[t]{\linewidth}
-    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=3pt]
-        \item[•] Developed customer churn models using logistic regression for a major insurance company, achieving a retention rate of 78\%. Involved clients in the analysis journey with infographics and presentations, helping them understand the findings and insights.
-        \item[•] Identified suspicious health insurance claims by formulating hypotheses and developing a rule-based fraud engine. Developed a random forest classifier to prioritize fraudulent claims, resulting in total savings of \$11M. The project significantly improved the efficiency of claims processing and saved the company valuable resources.
+    \begin{itemize}[nosep,after=\strut, leftmargin=1em, itemsep=2pt]
+        \item[•] Flagged suspicious health insurance claims with a rule-based fraud engine, then trained a random forest classifier to prioritize them, saving \$11M.
     \end{itemize}
     \end{minipage}
 }
@@ -217,7 +225,7 @@
 % \section{Projects}
 
 % \begin{tabularx}{\linewidth}{ @{}l r@{} }
-% \textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[3.75pt]
+% \textbf{Some Project} & \hfill \href{https://some-link.com}{Link to Demo} \\[2.5pt]
 % \multicolumn{2}{@{}X@{}}{long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width long long line of blah blah that will wrap when the table fills the column width}  \\
 % \end{tabularx}
 
